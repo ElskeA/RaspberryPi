@@ -10,9 +10,13 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(Raspberry_PIN, GPIO.OUT)
 GPIO.setup(Raspberry_PIN2, GPIO.OUT)
 
+# Methode om muillis te berekenen
 def millis():
     return time.time() * 1000
 
+# Methode om de knippersnelheden aan te passen. De leds knipperen om en om. 1 seconde aan/uit, dan 3 seconde aan/uit
+# de leds worden echter niet direct aangesproken, maar de pin die vanuit raspberry naar arduino loopt wordt high en low gezet
+# De twee verschillende pinnen geven de verschillende knippersnelheden aan
 def Arduino_blink():
     global previousMillis
     global previousMillis2

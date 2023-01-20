@@ -1,15 +1,18 @@
 import RPi.GPIO as GPIO
 import time
 
+# Deze pin gaat van de raspberry
 Raspberry_PIN = 2
 previousMillis = 0
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(Raspberry_PIN, GPIO.OUT)
 
+# Methode om gebruik te maken van millis
 def millis():
     return time.time() * 1000
-
+# Methode die ervoor zorgt dat de pin naar de raspberry 1 seconde op high zet en 1 seconde op low
+# Dit wordt vervolgens opgepakt door de arduino
 def Arduino_blink():
     global previousMillis
     if millis() - previousMillis >= 1000:
