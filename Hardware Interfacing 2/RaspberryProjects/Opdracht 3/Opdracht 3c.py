@@ -29,7 +29,7 @@ def Green_blink():
 #Beide methode worden aangesproken in de while loop
 while True:
     #De loop begint bij de eerste methode, deze wordt volledig doorlopen
-    #voordat de tweede methode wordt uitgevoerd 
+    #voordat de tweede methode wordt uitgevoerd
     Yellow_blink()
     Green_blink()
 

@@ -1,6 +1,10 @@
 import RPi.GPIO as GPIO
 from RpiMotorLib import RpiMotorLib
 
+# De library die is gebruikt voor deze opdracht is van github afgehaald via
+# de onderstaande link
+# https://github.com/gavinlyonsrepo/RpiMotorLib
+
 Button1 = 5
 Button2 = 21
 

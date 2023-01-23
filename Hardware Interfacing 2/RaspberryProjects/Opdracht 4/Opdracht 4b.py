@@ -8,6 +8,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(LED_Yellow, GPIO.OUT)
 GPIO.setup(BUTTON_PIN, GPIO.IN, GPIO.PUD_DOWN)
 
+# Methode aangemaakt die aangeeft hoe snel de led moet knipperen
 def Yellow_blink():
     GPIO.output(LED_Yellow, GPIO.HIGH)
     time.sleep(1)
@@ -17,5 +18,6 @@ def Yellow_blink():
 while True:
     buttonState = GPIO.input(BUTTON_PIN)
 
+    # Als de button wordt ingedrukt wordt de methode aangesproken
     while buttonState == GPIO.HIGH:
         Yellow_blink()

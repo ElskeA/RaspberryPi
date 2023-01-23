@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-# Deze pin gaat van de raspberry
+# Deze pin gaat van de raspberry naar de arduino
 Raspberry_PIN = 2
 previousMillis = 0
 

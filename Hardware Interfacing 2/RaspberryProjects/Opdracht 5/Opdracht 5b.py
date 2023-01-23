@@ -13,9 +13,11 @@ GPIO.setup(LED_Green, GPIO.OUT)
 GPIO.setup(Button1, GPIO.IN, GPIO.PUD_DOWN)
 GPIO.setup(Button2, GPIO.IN, GPIO.PUD_DOWN)
 
+# Methode om milis te kunnen gebruiken
 def millis():
     return time.time() * 1000
 
+# Methode die het gele LEDje 1 seconde aan zet en 1 seconde uit
 def Yellow_blink():
     global previousMillis
     if millis() - previousMillis >= 1000:
@@ -24,7 +26,7 @@ def Yellow_blink():
             GPIO.output(LED_Yellow, GPIO.LOW)
         else:
             GPIO.output(LED_Yellow, GPIO.HIGH)
-
+# Methode die het groene LEDje 0.7 sec uit zet en 1.3 seconde aan
 def Green_blink():
     global previousMillis
     if millis() - previousMillis >= 700:
@@ -37,7 +39,8 @@ def Green_blink():
 while True:
     buttonState2 = GPIO.input(Button2)
     buttonState1 = GPIO.input(Button1)
-
+    # Als knop 2 wordt ingedrukt gaat groen knipperen
+    # bij knop 1 is dat geel
     if buttonState2 == GPIO.HIGH:
         Green_blink()
 
